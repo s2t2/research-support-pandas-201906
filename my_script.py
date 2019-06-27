@@ -35,6 +35,10 @@ print("DATATYPES:")
 print(slim_df.dtypes)
 
 
+out_filepath = os.path.join(os.path.dirname(__file__), "slim_products.csv")
+
+slim_df.to_csv(out_filepath)
+
 
 #embed()
 
