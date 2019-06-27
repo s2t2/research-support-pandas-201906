@@ -3,6 +3,7 @@
 
 import os
 import pandas
+from IPython import embed # b/c breakpoint() isn't available in 3.6
 
 csv_filepath = os.path.join(os.path.dirname(__file__), "products.csv")
 print(os.path.isfile(csv_filepath))
@@ -29,10 +30,12 @@ print("FILTER COLUMNS...")
 
 slim_df = df.filter(items=["id", "name", "price"])
 print(slim_df.head())
-print(slim_df.columns)
+print("COLUMNS:", slim_df.columns)
+print("DATATYPES:")
+print(slim_df.dtypes)
 
 
 
+#embed()
 
-
-breakpoint()
+#breakpoint()

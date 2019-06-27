@@ -3,10 +3,10 @@
 ## Setup
 
 ```sh
-conda create -n pandas-env python=3.7
-conda activate pandas-env
+conda create -n pandas-env-36 python=3.6
+conda activate pandas-env-36
 
-pip install pandas
+pip install pandas ipython
 ```
 
 ## Usage
