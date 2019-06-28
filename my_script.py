@@ -10,10 +10,10 @@ print(os.path.isfile(csv_filepath))
 
 print("-------------")
 print("READING THE CSV FILE...")
-df = pandas.read_csv(csv_filepath)
+df = pandas.read_csv(csv_filepath, low_memory=True, chunksize=10)
 #print(type(df))
-print(df.head())
-print(df.columns)
+#print(df.head())
+#print(df.columns)
 
 #print("-------------")
 #print("LOOPING THROUGH COLUMNS...")
@@ -23,6 +23,36 @@ print(df.columns)
 #print("-------------")
 #print("DESCRIBE COLUMNS...")
 #print(df.describe())
+
+#chunk = list(df)[0]
+#print(chunk.head())
+#print(chunk.dtypes)
+
+
+
+
+
+
+
+
+
+for chunk in df:
+    print("------------------------------")
+    print(chunk.head())
+    #print("COLUMNS...")
+    #print(list(chunk.columns))
+    print("DTYPES...")
+    print(dict(chunk.dtypes))
+
+    #print("INFO...")
+    #print(chunk.info())
+    embed()
+
+exit()
+
+
+
+
 
 
 print("-------------")
